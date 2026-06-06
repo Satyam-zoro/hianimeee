@@ -21,7 +21,7 @@ export default async function handler(req, res) {
 
         const options = {
             amount: amountInSubUnits,
-            currency: "USD", // Change to "INR" if your Razorpay account is India-only
+            currency: "INR", // Change to "INR" if your Razorpay account is India-only
             receipt: `receipt_${Math.floor(Math.random() * 10000)}`,
         };
 
