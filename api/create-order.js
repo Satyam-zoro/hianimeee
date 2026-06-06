@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     });
 
     try {
-        // Receive the amount from the frontend (Now expecting amountInINR)
+        // Receive the amount from the frontend (expecting amountInINR)
         const { amountInINR } = req.body;
 
         // Razorpay expects Indian payments in Paise (1 INR = 100 Paise)
@@ -38,6 +38,12 @@ export default async function handler(req, res) {
 
     } catch (error) {
         console.error("Razorpay Order Error:", error);
-        res.status(500).json({ success: false, error: "Failed to create order" });
+        
+        // Let's send the EXACT error from Razorpay directly to your browser for debugging
+        const errorMessage = error.description || error.message || JSON.stringify(error);
+        res.status(500).json({ 
+            success: false, 
+            error: "Backend crashed! Razorpay says: " + errorMessage 
+        });
     }
 }
