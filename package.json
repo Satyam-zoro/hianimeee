@@ -1,0 +1,10 @@
+{
+  "name": "hianime",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.html"
+  },
+  "dependencies": {
+    "razorpay": "^2.9.2"
+  }
+}
