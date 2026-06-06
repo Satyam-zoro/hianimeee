@@ -660,7 +660,8 @@
                 const data = await response.json();
 
                 if (!data.success) {
-                    alert("Failed to initialize payment. Please try again.");
+                    // This will now alert EXACTLY why Razorpay rejected it
+                    alert(data.error); 
                     btn.innerText = originalText;
                     btn.disabled = false;
                     return;
