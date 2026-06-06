@@ -14,14 +14,15 @@ export default async function handler(req, res) {
     });
 
     try {
-        const { amountInUSD } = req.body;
+        // Receive the amount from the frontend (Now expecting amountInINR)
+        const { amountInINR } = req.body;
 
-        // Razorpay expects amounts in the smallest currency unit (cents/paise)
-        const amountInSubUnits = amountInUSD * 100;
+        // Razorpay expects Indian payments in Paise (1 INR = 100 Paise)
+        const amountInPaise = amountInINR * 100;
 
         const options = {
-            amount: amountInSubUnits,
-            currency: "INR", // Change to "INR" if your Razorpay account is India-only
+            amount: amountInPaise,
+            currency: "INR", // Locked to Indian Rupees
             receipt: `receipt_${Math.floor(Math.random() * 10000)}`,
         };
 
