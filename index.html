@@ -6,6 +6,7 @@
     <title>HiAnime | Elite Video Editing Hub</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
+    <!-- RAZORPAY CHECKOUT SCRIPT -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <style>
@@ -16,7 +17,6 @@
             --border-glass: rgba(255, 255, 255, 0.08);
             --neon-primary: #00f0ff;    
             --neon-secondary: #a200ff;  
-            --neon-accent: #ff0055;     
             --text-main: #e0e0e0;
             --text-muted: #888888;
             --text-light: #ffffff;
@@ -249,7 +249,7 @@
         .video-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%; 
             background: #000;
         }
 
@@ -305,7 +305,7 @@
         }
 
         .price {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--neon-primary);
             margin-bottom: 2rem;
@@ -375,11 +375,13 @@
             .hero h1 { font-size: 2.5rem; }
             .pricing-card.popular { transform: scale(1); }
             .section-title { font-size: 2.2rem; }
+            .price { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav id="navbar">
         <a href="#" class="logo">Hi<span>Anime</span></a>
         <div class="nav-links">
@@ -389,12 +391,14 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <h1>Visuals That Retain.</h1>
         <p>The premier post-production hub for creators. High-retention shorts, cinematic long-form, and frame-perfect syncs crafted by elite editors.</p>
         <a href="#pricing" class="btn-primary">View Packages</a>
     </section>
 
+    <!-- WHY US SECTION -->
     <section id="why-us">
         <h2 class="section-title">Why Choose Us</h2>
         <div class="section-subtitle">THE HiANIME ADVANTAGE</div>
@@ -418,11 +422,13 @@
         </div>
     </section>
 
+    <!-- PORTFOLIO SECTION -->
     <section id="portfolio">
         <h2 class="section-title">Our Work</h2>
         <div class="section-subtitle">LATEST MASTERPIECES</div>
 
         <div class="portfolio-grid">
+            <!-- Video 1 -->
             <div class="video-card glass-panel">
                 <h4>Geometry Dash</h4>
                 <div class="video-wrapper">
@@ -432,6 +438,7 @@
                 </div>
             </div>
 
+            <!-- Video 2 -->
             <div class="video-card glass-panel">
                 <h4>Food & Review</h4>
                 <div class="video-wrapper">
@@ -441,6 +448,7 @@
                 </div>
             </div>
 
+            <!-- Video 3 -->
             <div class="video-card glass-panel">
                 <h4>High Energy</h4>
                 <div class="video-wrapper">
@@ -450,6 +458,7 @@
                 </div>
             </div>
 
+            <!-- Video 4 -->
             <div class="video-card glass-panel">
                 <h4>Abstract Edit</h4>
                 <div class="video-wrapper">
@@ -459,6 +468,7 @@
                 </div>
             </div>
 
+            <!-- Video 5 -->
             <div class="video-card glass-panel">
                 <h4>Dangerous Writer</h4>
                 <div class="video-wrapper">
@@ -468,6 +478,7 @@
                 </div>
             </div>
 
+            <!-- Video 6 -->
             <div class="video-card glass-panel">
                 <h4>Podcast Clip</h4>
                 <div class="video-wrapper">
@@ -477,6 +488,7 @@
                 </div>
             </div>
 
+            <!-- Video 7 -->
             <div class="video-card glass-panel">
                 <h4>Disney Movie</h4>
                 <div class="video-wrapper">
@@ -486,6 +498,7 @@
                 </div>
             </div>
 
+            <!-- Video 8 -->
             <div class="video-card glass-panel">
                 <h4>Fashion Editorial</h4>
                 <div class="video-wrapper">
@@ -495,6 +508,7 @@
                 </div>
             </div>
 
+            <!-- Video 9 -->
             <div class="video-card glass-panel">
                 <h4>3D Minecraft</h4>
                 <div class="video-wrapper">
@@ -504,6 +518,7 @@
                 </div>
             </div>
 
+            <!-- Video 10 -->
             <div class="video-card glass-panel">
                 <h4>Viral Hook</h4>
                 <div class="video-wrapper">
@@ -513,6 +528,7 @@
                 </div>
             </div>
 
+            <!-- Video 11 -->
             <div class="video-card glass-panel">
                 <h4>Arcade Horror</h4>
                 <div class="video-wrapper">
@@ -522,6 +538,7 @@
                 </div>
             </div>
 
+            <!-- Video 12 -->
             <div class="video-card glass-panel">
                 <h4>Harvard Studied</h4>
                 <div class="video-wrapper">
@@ -531,6 +548,7 @@
                 </div>
             </div>
 
+            <!-- Video 13 -->
             <div class="video-card glass-panel">
                 <h4>Gaming Setup</h4>
                 <div class="video-wrapper">
@@ -540,6 +558,7 @@
                 </div>
             </div>
 
+            <!-- Video 14 -->
             <div class="video-card glass-panel">
                 <h4>Tekken 2</h4>
                 <div class="video-wrapper">
@@ -549,6 +568,7 @@
                 </div>
             </div>
 
+            <!-- Video 15 -->
             <div class="video-card glass-panel">
                 <h4>Top CS2 Skins</h4>
                 <div class="video-wrapper">
@@ -560,50 +580,56 @@
         </div>
     </section>
 
+    <!-- PRICING SECTION (UPDATED FOR INR) -->
     <section id="pricing">
         <h2 class="section-title">Post-Production Plans</h2>
         <div class="section-subtitle">CHOOSE YOUR TIER</div>
 
         <div class="pricing-grid">
+            <!-- Tier 1 -->
             <div class="pricing-card glass-panel">
                 <h3>Short-Form</h3>
-                <div class="price">$35 <span>/ vid</span></div>
+                <div class="price">₹2,999 <span>/ vid</span></div>
                 <ul class="pricing-features">
                     <li>Up to 60 Seconds</li>
                     <li>Dynamic Subtitles</li>
                     <li>Basic VFX & Transitions</li>
                 </ul>
-                <button class="btn-outline" onclick="payWithRazorpay(35, 'Short-Form Package')">Select Plan</button>
+                <button class="btn-outline" onclick="payWithRazorpay(2999, 'Short-Form Package')">Select Plan</button>
             </div>
 
+            <!-- Tier 2 -->
             <div class="pricing-card glass-panel popular">
                 <h3>The Retainer</h3>
-                <div class="price">$800 <span>/ mo</span></div>
+                <div class="price">₹65,000 <span>/ mo</span></div>
                 <ul class="pricing-features">
                     <li>Up to 30 Shorts/Month</li>
                     <li>Priority Rendering Queue</li>
                     <li>Advanced VFX & Motion Graphics</li>
                 </ul>
-                <button class="btn-outline" onclick="payWithRazorpay(800, 'The Retainer Package')">Select Plan</button>
+                <button class="btn-outline" onclick="payWithRazorpay(65000, 'The Retainer Package')">Select Plan</button>
             </div>
 
+            <!-- Tier 3 -->
             <div class="pricing-card glass-panel">
                 <h3>Long-Form</h3>
-                <div class="price">$150 <span>/ vid</span></div>
+                <div class="price">₹12,500 <span>/ vid</span></div>
                 <ul class="pricing-features">
                     <li>Up to 15 Minutes</li>
                     <li>A-Roll / B-Roll Syncing</li>
                     <li>Lower Thirds & Graphics</li>
                 </ul>
-                <button class="btn-outline" onclick="payWithRazorpay(150, 'Long-Form Package')">Select Plan</button>
+                <button class="btn-outline" onclick="payWithRazorpay(12500, 'Long-Form Package')">Select Plan</button>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 HiAnime Studio. Engineered for High Retention.</p>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
@@ -615,21 +641,20 @@
             }
         });
 
-        // SECURE RAZORPAY LOGIC VIA BACKEND
-        async function payWithRazorpay(amountInUSD, packageName) {
+        // SECURE RAZORPAY LOGIC (INR ONLY)
+        async function payWithRazorpay(amountInINR, packageName) {
             
-            // 1. Alert the user that processing is starting
             const btn = event.target;
             const originalText = btn.innerText;
             btn.innerText = "Loading...";
             btn.disabled = true;
 
             try {
-                // 2. Ask your Vercel backend to create an order
+                // 1. Send the INR amount to your Vercel backend
                 const response = await fetch('/api/create-order', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ amountInUSD: amountInUSD })
+                    body: JSON.stringify({ amountInINR: amountInINR })
                 });
 
                 const data = await response.json();
@@ -641,22 +666,18 @@
                     return;
                 }
 
-                // 3. Set up Razorpay with the secure order_id from your backend
+                // 2. Set up Razorpay popup
                 var options = {
-                    // Important: Insert your public Test Key ID here
-                    "key": "YOUR_RAZORPAY_TEST_KEY_ID", 
-                    "amount": data.amount,
-                    "currency": "INR", // Must match the currency set in create-order.js
+                    "key": "YOUR_RAZORPAY_TEST_KEY_ID", // <-- Put your public Test Key ID here
+                    "amount": data.amount, // This is now safely in Paise from the backend
+                    "currency": "INR", // Locked to Indian Rupees
                     "name": "HiAnime Studio",
                     "description": packageName,
-                    "image": "https://your-website.com/logo.png", // Add your actual logo URL here
-                    "order_id": data.order_id, // SECURE ORDER ID FROM BACKEND!
+                    "image": "https://your-website.com/logo.png", 
+                    "order_id": data.order_id, 
                     
                     "handler": function (response){
-                        // Payment Success!
                         alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
-                        // Optional: Redirect them to a success page
-                        // window.location.href = "/success.html";
                     },
                     "prefill": {
                         "name": "", 
@@ -679,7 +700,6 @@
                 console.error(error);
                 alert("Something went wrong processing your request.");
             } finally {
-                // Reset button state
                 btn.innerText = originalText;
                 btn.disabled = false;
             }
