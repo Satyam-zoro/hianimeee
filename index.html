@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HiAnime | Elite Video Editing Hub</title>
+    
     <link rel="icon" type="image/png" href="/favicon.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <!-- RAZORPAY CHECKOUT SCRIPT -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <style>
@@ -382,7 +383,6 @@
 </head>
 <body>
 
-    <!-- NAVIGATION -->
     <nav id="navbar">
         <a href="#" class="logo">Hi<span>Anime</span></a>
         <div class="nav-links">
@@ -392,14 +392,12 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <section class="hero">
         <h1>Visuals That Retain.</h1>
         <p>The premier post-production hub for creators. High-retention shorts, cinematic long-form, and frame-perfect syncs crafted by elite editors.</p>
         <a href="#pricing" class="btn-primary">View Packages</a>
     </section>
 
-    <!-- WHY US SECTION -->
     <section id="why-us">
         <h2 class="section-title">Why Choose Us</h2>
         <div class="section-subtitle">THE HiANIME ADVANTAGE</div>
@@ -423,13 +421,11 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
     <section id="portfolio">
         <h2 class="section-title">Our Work</h2>
         <div class="section-subtitle">LATEST MASTERPIECES</div>
 
         <div class="portfolio-grid">
-            <!-- Video 1 -->
             <div class="video-card glass-panel">
                 <h4>Geometry Dash</h4>
                 <div class="video-wrapper">
@@ -439,7 +435,6 @@
                 </div>
             </div>
 
-            <!-- Video 2 -->
             <div class="video-card glass-panel">
                 <h4>Food & Review</h4>
                 <div class="video-wrapper">
@@ -449,7 +444,6 @@
                 </div>
             </div>
 
-            <!-- Video 3 -->
             <div class="video-card glass-panel">
                 <h4>High Energy</h4>
                 <div class="video-wrapper">
@@ -459,7 +453,6 @@
                 </div>
             </div>
 
-            <!-- Video 4 -->
             <div class="video-card glass-panel">
                 <h4>Abstract Edit</h4>
                 <div class="video-wrapper">
@@ -469,7 +462,6 @@
                 </div>
             </div>
 
-            <!-- Video 5 -->
             <div class="video-card glass-panel">
                 <h4>Dangerous Writer</h4>
                 <div class="video-wrapper">
@@ -479,7 +471,6 @@
                 </div>
             </div>
 
-            <!-- Video 6 -->
             <div class="video-card glass-panel">
                 <h4>Podcast Clip</h4>
                 <div class="video-wrapper">
@@ -489,7 +480,6 @@
                 </div>
             </div>
 
-            <!-- Video 7 -->
             <div class="video-card glass-panel">
                 <h4>Disney Movie</h4>
                 <div class="video-wrapper">
@@ -499,7 +489,6 @@
                 </div>
             </div>
 
-            <!-- Video 8 -->
             <div class="video-card glass-panel">
                 <h4>Fashion Editorial</h4>
                 <div class="video-wrapper">
@@ -509,7 +498,6 @@
                 </div>
             </div>
 
-            <!-- Video 9 -->
             <div class="video-card glass-panel">
                 <h4>3D Minecraft</h4>
                 <div class="video-wrapper">
@@ -519,7 +507,6 @@
                 </div>
             </div>
 
-            <!-- Video 10 -->
             <div class="video-card glass-panel">
                 <h4>Viral Hook</h4>
                 <div class="video-wrapper">
@@ -529,7 +516,6 @@
                 </div>
             </div>
 
-            <!-- Video 11 -->
             <div class="video-card glass-panel">
                 <h4>Arcade Horror</h4>
                 <div class="video-wrapper">
@@ -539,7 +525,6 @@
                 </div>
             </div>
 
-            <!-- Video 12 -->
             <div class="video-card glass-panel">
                 <h4>Harvard Studied</h4>
                 <div class="video-wrapper">
@@ -549,7 +534,6 @@
                 </div>
             </div>
 
-            <!-- Video 13 -->
             <div class="video-card glass-panel">
                 <h4>Gaming Setup</h4>
                 <div class="video-wrapper">
@@ -559,7 +543,6 @@
                 </div>
             </div>
 
-            <!-- Video 14 -->
             <div class="video-card glass-panel">
                 <h4>Tekken 2</h4>
                 <div class="video-wrapper">
@@ -569,7 +552,6 @@
                 </div>
             </div>
 
-            <!-- Video 15 -->
             <div class="video-card glass-panel">
                 <h4>Top CS2 Skins</h4>
                 <div class="video-wrapper">
@@ -581,13 +563,11 @@
         </div>
     </section>
 
-    <!-- PRICING SECTION (UPDATED FOR INR) -->
     <section id="pricing">
         <h2 class="section-title">Post-Production Plans</h2>
         <div class="section-subtitle">CHOOSE YOUR TIER</div>
 
         <div class="pricing-grid">
-            <!-- Tier 1 -->
             <div class="pricing-card glass-panel">
                 <h3>Short-Form</h3>
                 <div class="price">₹2,999 <span>/ vid</span></div>
@@ -596,10 +576,9 @@
                     <li>Dynamic Subtitles</li>
                     <li>Basic VFX & Transitions</li>
                 </ul>
-                <button class="btn-outline" onclick="payWithRazorpay(2999, 'Short-Form Package')">Select Plan</button>
+                <button class="btn-outline" onclick="payWithRazorpay(2999, 'Short-Form Package', this)">Select Plan</button>
             </div>
 
-            <!-- Tier 2 -->
             <div class="pricing-card glass-panel popular">
                 <h3>The Retainer</h3>
                 <div class="price">₹65,000 <span>/ mo</span></div>
@@ -608,10 +587,9 @@
                     <li>Priority Rendering Queue</li>
                     <li>Advanced VFX & Motion Graphics</li>
                 </ul>
-                <button class="btn-outline" onclick="payWithRazorpay(65000, 'The Retainer Package')">Select Plan</button>
+                <button class="btn-outline" onclick="payWithRazorpay(65000, 'The Retainer Package', this)">Select Plan</button>
             </div>
 
-            <!-- Tier 3 -->
             <div class="pricing-card glass-panel">
                 <h3>Long-Form</h3>
                 <div class="price">₹12,500 <span>/ vid</span></div>
@@ -620,17 +598,15 @@
                     <li>A-Roll / B-Roll Syncing</li>
                     <li>Lower Thirds & Graphics</li>
                 </ul>
-                <button class="btn-outline" onclick="payWithRazorpay(12500, 'Long-Form Package')">Select Plan</button>
+                <button class="btn-outline" onclick="payWithRazorpay(12500, 'Long-Form Package', this)">Select Plan</button>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 HiAnime Studio. Engineered for High Retention.</p>
     </footer>
 
-    <!-- SCRIPTS -->
     <script>
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
@@ -642,16 +618,20 @@
             }
         });
 
-        // SECURE RAZORPAY LOGIC (INR ONLY)
-        async function payWithRazorpay(amountInINR, packageName) {
+        // SECURE RAZORPAY LOGIC (DYNAMIC KEY INJECTION)
+        async function payWithRazorpay(amountInINR, packageName, buttonElement) {
             
-            const btn = event.target;
-            const originalText = btn.innerText;
-            btn.innerText = "Loading...";
-            btn.disabled = true;
+            const originalText = buttonElement.innerText;
+            buttonElement.innerText = "Processing...";
+            buttonElement.disabled = true;
+
+            // Helper to reset button if user closes popup or it fails
+            function resetButton() {
+                buttonElement.innerText = originalText;
+                buttonElement.disabled = false;
+            }
 
             try {
-                // 1. Send the INR amount to your Vercel backend
                 const response = await fetch('/api/create-order', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -660,30 +640,22 @@
 
                 const data = await response.json();
 
-                if (!data.success) {
-                    // This will now alert EXACTLY why Razorpay rejected it
-                    alert(data.error); 
-                    btn.innerText = originalText;
-                    btn.disabled = false;
+                if (!data.success || !data.keyId) {
+                    alert("Payment failed to initialize: " + (data.error || "Missing Key"));
+                    resetButton();
                     return;
                 }
 
-                // 2. Set up Razorpay popup
                 var options = {
-                    "key": "rzp_test_YOUR_ACTUAL_LIVE_KEY", // <-- Put your public Test Key ID here
-                    "amount": data.amount, // This is now safely in Paise from the backend
-                    "currency": "INR", // Locked to Indian Rupees
+                    "key": data.keyId, // <-- Dynamically pulled from backend!
+                    "amount": data.amount, 
+                    "currency": "INR",
                     "name": "HiAnime Studio",
                     "description": packageName,
-                    "image": "https://your-website.com/logo.png", 
                     "order_id": data.order_id, 
                     
                     "handler": function (response){
                         alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
-                    },
-                    "prefill": {
-                        "name": "", 
-                        "email": ""
                     },
                     "theme": {
                         "color": "#a200ff"
@@ -695,15 +667,18 @@
                 rzp1.on('payment.failed', function (response){
                     alert("Payment Failed. Reason: " + response.error.description);
                 });
+
+                // Reset button if they close the window without paying
+                rzp1.on('payment.modal.closed', function() {
+                    resetButton();
+                });
                 
                 rzp1.open();
 
             } catch (error) {
                 console.error(error);
                 alert("Something went wrong processing your request.");
-            } finally {
-                btn.innerText = originalText;
-                btn.disabled = false;
+                resetButton();
             }
         }
     </script>
