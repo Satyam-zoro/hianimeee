@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiAnime | Elite Video Editing Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --bg-base: #050505;
+            --surface-glass: rgba(20, 20, 25, 0.6);
+            --border-glass: rgba(255, 255, 255, 0.08);
+            --neon-primary: #00f0ff;    /* Cyan */
+            --neon-secondary: #a200ff;  /* Amethyst/Purple */
+            --neon-accent: #ff0055;     /* Pink */
+            --text-main: #e0e0e0;
+            --text-muted: #888888;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.08), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(162, 0, 255, 0.08), transparent 30%);
+            background-attachment: fixed;
+        }
+
+        h1, h2, h3, h4, .logo {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* --- UTILITY CLASSES --- */
+        .glass-panel {
+            background: var(--surface-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--neon-primary);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 4rem;
+            letter-spacing: 4px;
+        }
+
+        section {
+            padding: 6rem 5%;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .nav-scrolled {
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--neon-secondary);
+            text-shadow: 0 0 15px var(--neon-secondary);
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2.5rem;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon-primary);
+            text-shadow: 0 0 10px var(--neon-primary);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(0deg, var(--bg-base) 0%, transparent 100%);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 5vw;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .btn-primary {
+            padding: 16px 40px;
+            font-size: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            color: #000;
+            background: var(--neon-primary);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px var(--neon-primary);
+            background: #fff;
+        }
+
+        /* --- WHY US SECTION --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: 0.4s;
+            border-top: 3px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-top: 3px solid var(--neon-secondary);
+            background: rgba(20, 20, 25, 0.9);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            color: var(--neon-primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* --- PORTFOLIO SECTION --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .video-card:hover {
+            transform: scale(1.02);
+            border-color: var(--neon-primary);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+        }
+
+        .video-card h4 {
+            padding: 1rem;
+            font-size: 1.1rem;
+            background: rgba(0,0,0,0.5);
+            color: var(--neon-primary);
+            text-align: center;
+            border-bottom: 1px solid var(--border-glass);
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+        }
+
+        /* Override aspect ratio for portrait videos based on content if needed, 
+           but defaulting to standard wrapper keeps grid clean */
+        .video-wrapper video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            outline: none;
+        }
+
+        /* --- PRICING SECTION --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .pricing-card {
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: 0.4s;
+        }
+
+        .pricing-card.popular {
+            border: 1px solid var(--neon-secondary);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(162, 0, 255, 0.15);
+        }
+
+        .pricing-card.popular::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--neon-secondary);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--neon-primary);
+            margin-bottom: 2rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-features li {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid var(--neon-primary);
+            color: var(--neon-primary);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--neon-primary);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
+
+        .pricing-card.popular .btn-outline {
+            border-color: var(--neon-secondary);
+            color: var(--neon-secondary);
+        }
+
+        .pricing-card.popular .btn-outline:hover {
+            background: var(--neon-secondary);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(162, 0, 255, 0.4);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            background: #020202;
+            border-top: 1px solid var(--border-glass);
+            font-family: 'Rajdhani', sans-serif;
+            color: var(--text-muted);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .pricing-card.popular { transform: scale(1); }
+            .section-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <a href="#" class="logo">Hi<span>Anime</span></a>
+        <div class="nav-links">
+            <a href="#why-us">Why Us</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#pricing">Pricing</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Visuals That Retain.</h1>
+        <p>The premier post-production hub for creators. High-retention shorts, cinematic long-form, and frame-perfect syncs crafted by elite editors.</p>
+        <a href="#pricing" class="btn-primary">View Packages</a>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section id="why-us">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="section-subtitle">THE HiANIME ADVANTAGE</div>
+        
+        <div class="features-grid">
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">⚡</div>
+                <h3>Frame-Perfect Sync</h3>
+                <p>Every transition, beat drop, and visual effect is meticulously timed to the audio. We don't just edit; we engineer the rhythm of your content.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">👁️</div>
+                <h3>Algorithm Optimized</h3>
+                <p>We understand viewer psychology. Our edits are structured with viral hooks, dynamic pacing, and pattern interrupts to maximize audience retention.</p>
+            </div>
+            <div class="feature-card glass-panel">
+                <div class="feature-icon">🚀</div>
+                <h3>Rapid Delivery</h3>
+                <p>Content moves fast, and so do we. Get broadcast-ready edits delivered through a streamlined, professional pipeline without sacrificing quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio">
+        <h2 class="section-title">Our Work</h2>
+        <div class="section-subtitle">LATEST MASTERPIECES</div>
+
+        <div class="portfolio-grid">
+            <!-- Video 1 -->
+            <div class="video-card glass-panel">
+                <h4>Geometry Dash</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/long%20form/Ranking%20Geometry%20Dash%20Mods.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-card glass-panel">
+                <h4>Food & Review</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/McDonald%E2%80%99s%20vs.%20Dunkin%20Iced%20Coffee!.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-card glass-panel">
+                <h4>High Energy</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/high%20energy%20shortts.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-card glass-panel">
+                <h4>Abstract Edit</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/cool%20edit.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-card glass-panel">
+                <h4>Dangerous Writer</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/long%20form/The%20Most%20Dangerous%20Writer%20Who%20Ever%20Lived.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 6 -->
+            <div class="video-card glass-panel">
+                <h4>Podcast Clip</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/podcast%20highlightttt.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 7 -->
+            <div class="video-card glass-panel">
+                <h4>Disney Movie</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/5.0%20Rosie_DisneyMovie.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 8 -->
+            <div class="video-card glass-panel">
+                <h4>Fashion Editorial</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/fashin%20short%20(249edit).mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 9 -->
+            <div class="video-card glass-panel">
+                <h4>3D Minecraft</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/long%20form/How%20To%20Make%203D%20MINECRAFT%20Models%20Using%20AI%20%EF%BD%9C%20Ai%20Thumbnail%20Tutorial.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 10 -->
+            <div class="video-card glass-panel">
+                <h4>Viral Hook</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/viral%20hook.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 11 -->
+            <div class="video-card glass-panel">
+                <h4>Arcade Horror</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/long%20form/This%20TERRIFYING%20Chuck%20E.%20Cheese%20Game%20lets%20you%20fight%20back....mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 12 -->
+            <div class="video-card glass-panel">
+                <h4>Harvard Studied</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/Why%20Harvard%20Studied%20This%20Footballer.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 13 -->
+            <div class="video-card glass-panel">
+                <h4>Gaming Setup</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/long%20form/gaming%20SHORT.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 14 -->
+            <div class="video-card glass-panel">
+                <h4>Tekken 2</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/long%20form/Tekken%202%20Is%20UNDERRATED.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Video 15 -->
+            <div class="video-card glass-panel">
+                <h4>Top CS2 Skins</h4>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="https://amethyst-cdn.b-cdn.net/long%20form/las%20MEJORES%20SKINS%20BARATAS%20y%20BONITAS%20de%20CS2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing">
+        <h2 class="section-title">Post-Production Plans</h2>
+        <div class="section-subtitle">CHOOSE YOUR TIER</div>
+
+        <div class="pricing-grid">
+            <!-- Tier 1 -->
+            <div class="pricing-card glass-panel">
+                <h3>Short-Form</h3>
+                <div class="price">$35 <span>/ vid</span></div>
+                <ul class="pricing-features">
+                    <li>Up to 60 Seconds</li>
+                    <li>Dynamic Subtitles</li>
+                    <li>Basic VFX & Transitions</li>
+                    <li>Color Grading</li>
+                    <li>2 Revisions</li>
+                </ul>
+                <a href="#" class="btn-outline">Select Plan</a>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="pricing-card glass-panel popular">
+                <h3>The Retainer</h3>
+                <div class="price">$800 <span>/ mo</span></div>
+                <ul class="pricing-features">
+                    <li>Up to 30 Shorts/Month</li>
+                    <li>Priority Rendering Queue</li>
+                    <li>Advanced VFX & Motion Graphics</li>
+                    <li>Custom Sound Design</li>
+                    <li>Unlimited Revisions</li>
+                </ul>
+                <a href="#" class="btn-outline">Select Plan</a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="pricing-card glass-panel">
+                <h3>Long-Form</h3>
+                <div class="price">$150 <span>/ vid</span></div>
+                <ul class="pricing-features">
+                    <li>Up to 15 Minutes</li>
+                    <li>A-Roll / B-Roll Syncing</li>
+                    <li>Lower Thirds & Graphics</li>
+                    <li>Audio Mixing & Mastering</li>
+                    <li>3 Revisions</li>
+                </ul>
+                <a href="#" class="btn-outline">Select Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 HiAnime Studio. Engineered for High Retention.</p>
+    </footer>
+
+    <!-- NAVBAR SCROLL SCRIPT -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
